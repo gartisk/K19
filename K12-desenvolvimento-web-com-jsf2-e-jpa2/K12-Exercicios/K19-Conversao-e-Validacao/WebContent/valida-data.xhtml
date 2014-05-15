@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>K19 Treinamento</h:head> 
+<h:body> 
+	<h:form>
+		<h:outputLabel value="Digite a Data: " for="campo-data"/>
+		<h:inputText id="campo-data">
+			<f:attribute name="inicio" value="01/01/1970"/>
+			<f:attribute name="fim" value="31/12/2010"/>
+			<f:validator validatorId="br.com.k19.converters.ValidadorDeData"/>
+		</h:inputText>
+		<h:message for="campo-data"></h:message>
+		
+		<h:commandButton value="Enviar" />
+	</h:form>
+</h:body> 
+</html>

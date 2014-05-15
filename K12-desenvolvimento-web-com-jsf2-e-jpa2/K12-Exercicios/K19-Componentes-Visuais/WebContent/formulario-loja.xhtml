@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" >
+<h:head>
+	<title>K19 Treinamentos</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputLabel value="Nome: " for="nome" />
+		<h:inputText value="#{atendimentoLojaBean.nome}" id="nome" />
+		
+		<h:outputLabel value="Email: " for="email" />
+		<h:inputText value="#{atendimentoLojaBean.email}" id="email" />
+		
+		<h:outputLabel value="Telefone: " for="telefone" />
+		<h:inputText value="#{atendimentoLojaBean.telefone}" id="telefone" />
+		
+		<h:outputLabel value="Sexo: " for="sexo" />
+		<h:selectOneRadio value="#{atendimentoLojaBean.sexo}" id="sexo">
+			<f:selectItems
+				value="#{atendimentoLojaBean.listaSexo}"
+				var="tipoSexo"
+				itemLabel="#{tipoSexo}"
+				itemValue="#{tipoSexo}"
+			/>
+		</h:selectOneRadio>
+		
+		<h:outputLabel value="Número do Pedido: " for="pedido" />
+		<h:inputText value="#{atendimentoLojaBean.numeroPedido}" id="pedido" />
+		
+		<h:outputLabel value="Assunto: " for="assunto" />
+		<h:selectOneMenu value="#{atendimentoLojaBean.assunto}" id="assunto">
+			<f:selectItems
+				value="#{atendimentoLojaBean.listaAssunto}"
+				var="tipoAssunto"
+				itemLabel="#{tipoAssunto}"
+				itemValue="#{tipoAssunto}"
+			 />
+		</h:selectOneMenu>
+		
+		<h:outputLabel value="Comentário: " for="comentario"/>
+		<h:inputTextarea value="#{atendimentoLojaBean.comentario}" id="comentario" />
+		
+		<h:commandButton value="enviar" />
+	</h:form>
+	Caro Usuario: <b>#{atendimentoLojaBean.nome}</b> seu pedido <b>#{atendimentoLojaBean.numeroPedido}</b> foi computado por favor aguarde!
+</h:body>
+</html>

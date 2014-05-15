@@ -1,0 +1,30 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+      <ui:define name="corpo-da-pagina">
+      	<h:link value="Menu" outcome="menu" />
+      	<h:form>
+      		<h:panelGrid columns="2">
+      			<h:outputLabel value="Marca: " for="campo-marca" />
+      			<h:inputText value="#{carroBean.carro.marca}" id="campo-marca" />
+      			
+      			<h:outputLabel value="Modelo: " for="campo-modelo" />
+      			<h:inputText value="#{carroBean.carro.modelo}" id="campo-modelo" />
+      			
+      			<h:commandButton value="Adicionar" action="#{carroBean.adicionaCarro}" />
+      		</h:panelGrid>
+      	</h:form>
+      	
+      	<h:panelGroup rendered="#{not empty carroBean.carros}">
+      		<h1>Lista de carros</h1>
+      		<ul>
+      			<ui:repeat var="carro" value="#{carroBean.carros}">
+      				<li><h:outputText value="#{carro.marca} #{carro.modelo}" /></li>
+      			</ui:repeat>
+      		</ul>
+      	</h:panelGroup>
+      </ui:define>
+</ui:composition>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<title>K19 Treinamentos</title>
+</h:head> 
+<body>
+	<h1>Cadastro de Funcionário</h1>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Salário: R$" for="campo-salario" />
+			<h:inputText id="campo-salario" value="#{funcionarioBean.funcionario.salario}" >
+				<f:convertNumber locale="pt_BR" />
+			</h:inputText>
+			<h:message for="campo-salario" />
+			
+			<h:outputLabel value="Código: " for="campo-codigo" />
+			<h:inputText id="campo-codigo" value="#{funcionarioBean.funcionario.codigo}" >
+			</h:inputText>
+			<h:message for="campo-codigo" />
+			
+			<h:outputLabel value="Data: (dd/MM/yyyy)" for="campo-aniversario" />
+			<h:inputText id="campo-aniversario" value="#{funcionarioBean.funcionario.aniversario}" >
+			</h:inputText>
+			<h:message for="campo-aniversario" />
+			
+			<h:commandButton value="cadastrar" />
+		</h:panelGrid>
+	</h:form>
+</body> 
+</html>
